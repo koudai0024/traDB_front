@@ -1,4 +1,7 @@
-module.exports = {
+/* eslint-disable @typescript-eslint/no-var-requires */
+const withLinaria = require("next-linaria");
+
+module.exports = withLinaria({
   future: {
     webpack5: true,
   },
@@ -6,4 +9,4 @@ module.exports = {
   reactStrictMode: true,
   typescript: { ignoreDevErrors: true },
   poweredByHeader: false,
-};
+});

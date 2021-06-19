@@ -1,8 +1,13 @@
+import { Layout } from "src/components/Layouts/Layout";
+import { MainSearchForm } from "src/components/Unique/MainSearchForm";
+
 const Home = () => {
   return (
-    <div>
-      <h1>Hello World!!!</h1>
-    </div>
+    <Layout>
+      <main>
+        <MainSearchForm />
+      </main>
+    </Layout>
   );
 };
 

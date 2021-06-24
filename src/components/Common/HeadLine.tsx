@@ -5,7 +5,9 @@ import styled from "styled-components";
 const HeadLineText = styled.p`
   font-size: 24px;
   font-weight: bold;
-  color: #18181b;
+  color: ${(props) => {
+    return props.theme.colors.black;
+  }};
 `;
 
 const HeadLineTextH1 = HeadLineText.withComponent("h1");
@@ -19,7 +21,7 @@ const AltColor = styled.span<{ color: string | undefined }>`
   color: ${(props) => {
     return props.color
       ? insertStr(props.color.replace("#", ""), 0, "#")
-      : "#18181b";
+      : props.theme.colors.black;
   }};
 `;
 

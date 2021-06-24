@@ -1,3 +1,4 @@
+import { Inner } from "src/components/Common/Inner";
 import { Input } from "src/components/Common/Input";
 import styled from "styled-components";
 
@@ -65,7 +66,7 @@ const SearchForm = styled.div`
 export const MainSearchForm = () => {
   return (
     <SearchForm>
-      <div className="inner">
+      <Inner>
         <div className="panel">
           <StyledInput type="text" placeholder="フリーワード" />
           <StyledInput type="text" placeholder="場所" />
@@ -83,7 +84,7 @@ export const MainSearchForm = () => {
           </div>
           <button className="btn">検索</button>
         </div>
-      </div>
+      </Inner>
     </SearchForm>
   );
 };

@@ -16,7 +16,7 @@ export const Primary = () => {
       title="大阪城"
       titleTag="h2"
       image="/images/oosakajou.jpeg"
-      width="400px"
+      widthProps="400px"
     />
   );
 };
@@ -31,5 +31,5 @@ CenterColorText.args = {
   title: "大阪城",
   titleTag: "h2",
   image: "/images/oosakajou.jpeg",
-  width: "400px",
+  widthProps: "400px",
 };

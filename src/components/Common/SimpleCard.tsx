@@ -2,9 +2,9 @@ import type { VFC } from "react";
 import { Image16x9 } from "src/components/Common/Img";
 import styled from "styled-components";
 
-const Wrap = styled.div<{ width: string | undefined }>`
+const Wrap = styled.div<{ widthProps: string | undefined }>`
   width: ${(props) => {
-    return props.width ? props.width : "100%";
+    return props.widthProps ? props.widthProps : "100%";
   }};
 `;
 
@@ -38,7 +38,8 @@ export type SimpleCardProps = {
   title: string;
   image: string;
   titleTag: "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  width?: string;
+  widthProps?: string;
+  className?: string;
 };
 
 export const SimpleCard: VFC<SimpleCardProps> = (props) => {
@@ -62,7 +63,7 @@ export const SimpleCard: VFC<SimpleCardProps> = (props) => {
   };
   const TitleTag = IsTagName();
   return (
-    <Wrap width={props?.width}>
+    <Wrap widthProps={props?.widthProps} className={props?.className}>
       <Image16x9
         imgSrc={props.image}
         alt={props.tag + "|" + props.title}

@@ -1,4 +1,5 @@
 import type { VFC } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 const Wrap = styled.div`
@@ -70,6 +71,13 @@ export type DropDownMenuProps = {
 };
 
 export const DropDownMenu: VFC<DropDownMenuProps> = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpne = () => {
+    const openState = !isOpen;
+    setIsOpen(openState);
+  };
+
   const IsLabelTag = () => {
     switch (props.labelTagVariant) {
       case "h1":
@@ -91,16 +99,18 @@ export const DropDownMenu: VFC<DropDownMenuProps> = (props) => {
   const LabelTag = IsLabelTag();
   return (
     <Wrap>
-      <LabelTag>{props.label}</LabelTag>
-      <List>
-        {props.contents.map((content) => {
-          return (
-            <Item key={content.value}>
-              <a href={content.href}>{content.value}</a>
-            </Item>
-          );
-        })}
-      </List>
+      <LabelTag onClick={handleOpne}>{props.label}</LabelTag>
+      {isOpen && (
+        <List>
+          {props.contents.map((content) => {
+            return (
+              <Item key={content.value}>
+                <a href={content.href}>{content.value}</a>
+              </Item>
+            );
+          })}
+        </List>
+      )}
     </Wrap>
   );
 };

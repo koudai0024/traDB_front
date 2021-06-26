@@ -31,6 +31,7 @@ export type HeadLineProps = {
   altColorText?: string;
   afterText?: string;
   color?: string | "3B82F6" | "EA5532";
+  className?: string;
 };
 
 export const HeadLine: VFC<HeadLineProps> = (props) => {
@@ -54,7 +55,7 @@ export const HeadLine: VFC<HeadLineProps> = (props) => {
   };
   const TagName = IsTagName();
   return (
-    <TagName>
+    <TagName className={props?.className}>
       {props.beforeText && props.beforeText}
       {props.altColorText && (
         <AltColor color={props?.color}>{props.altColorText}</AltColor>
